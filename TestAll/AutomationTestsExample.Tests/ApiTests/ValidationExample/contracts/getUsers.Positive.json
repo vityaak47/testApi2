@@ -1,0 +1,48 @@
+﻿{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "page": {"type": "integer"},
+    "per_page" : {"type" :  "integer"},
+    "total" : {"type" :  "integer"},
+    "total_pages" : {"type" :  "integer"},
+    "data": {
+      "type": "array",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "email": {
+            "type": "string"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["id", "email", "first_name", "last_name", "avatar"]
+    },
+    "support": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": ["url", "text"]
+    }
+  },
+  "required": ["data", "support", "total", "total_pages", "page", "per_page"]
+}
